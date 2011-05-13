@@ -135,15 +135,6 @@ google.maps.Polygon.prototype.Distance = function() {
   return dist;
 }
 
-// === A method which returns the index of point ===
-google.maps.Polygon.prototype.GetIndexOfPoint = function(point) {
-  for (var i=1; i < this.getPath().getLength(); i++) {
-    if(this.getPath().getAt(i).equals(point)){
-    	return i;
-    }
-  }
-  return -1;
-}
 
 // === A method which returns the bounds as a GLatLngBounds ===
 google.maps.Polygon.prototype.Bounds = function() {
@@ -255,9 +246,4 @@ google.maps.Polyline.prototype.GetPointAtDistance   = google.maps.Polygon.protot
 google.maps.Polyline.prototype.GetPointsAtDistance  = google.maps.Polygon.prototype.GetPointsAtDistance;
 google.maps.Polyline.prototype.GetIndexAtDistance   = google.maps.Polygon.prototype.GetIndexAtDistance;
 google.maps.Polyline.prototype.Bearing              = google.maps.Polygon.prototype.Bearing;
-google.maps.Polyline.prototype.GetIndexOfPoint      = google.maps.Polygon.prototype.GetIndexOfPoint;
-
-
-
-
 

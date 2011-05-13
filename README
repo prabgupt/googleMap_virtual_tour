@@ -1,0 +1,18 @@
+Purpose of this plugin:
+-----------------------
+
+You can display virtual tour between two places on google maps. Currently sample shows basic animation of marker moving along direction path between various places located on map.
+
+Usage:
+--------
+
+	Prerequiste
+	-----------
+		#Jquery JS and JQuery-UI JS(1.8.12)
+			For your convenience I have included them in this project too so that you can use them directly
+		
+# Include two js files - googleMaps.js and v3_eploy.js. Latter file is Google Maps API extension written by Mike Williams & Larry Ross.
+
+# Open Sample HTML. Click on Play button to start virtual tour[it will turn to Pause after clicking] and to reset tour click on button to left of Play/Pause button.
+
+Please visit: http://www.golygon.com/2011/05/virtual-touring-in-google-maps-with-playpause-feature to learn about the code inside js and sample html

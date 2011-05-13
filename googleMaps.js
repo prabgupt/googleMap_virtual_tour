@@ -1,3 +1,21 @@
+/*
+
+Copyright (c) 2011 Prabhat Gupta(prabhatgupta.webs.com | golygon.com)
+
+This script may be used for non-commercial purposes only. For any
+commercial purposes, please contact the author at prabhat@golygon.com
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
 var mapShow;
 var marker;
 var geocoder;
@@ -168,7 +186,6 @@ var endLocation;
 var tourRunning = false;
 var locationArr;
 var descArr;
-var index = 0;
 var distance;
 var callbackFunc;
 
@@ -197,7 +214,7 @@ function initialize(div){
 	 //if (marker) { marker.setMap(null);}  
 	 polyShow.setMap(null); 
 	 directionsDisplay.setMap(null);
-	 //index = 0; 
+	 index = 0; 
 	 distance = 0;
 	 //stop = false;	
 }
