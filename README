@@ -15,6 +15,10 @@ Usage:
 		
 # Include two js files - googleMaps.js and v3_eploy.js. Latter file is Google Maps API extension written by Mike Williams & Larry Ross.
 
-# Open Sample HTML. Click on Play button to start virtual tour[it will turn to Pause after clicking] and to reset tour click on button to left of Play/Pause button.
+# Open Sample HTML in browser. 
+
+              # Click on Play button to start virtual tour[it will turn to Pause after clicking]
+              # When playing, select value from dropdown(to right of play button) to increase/decrease speed
+              # To reset tour click on button to left of Play/Pause button.
 
 Please visit: http://www.golygon.com/2011/05/virtual-touring-in-google-maps-with-playpause-feature to learn about the code inside js and sample html
