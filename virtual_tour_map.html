@@ -1,0 +1,76 @@
+<html>
+<head>
+<LINK href="jquery-ui-1.8.12.custom.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-1.5.1.min.js"></script>
+<script src="jquery-ui-1.8.12.custom.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="googleMaps.js"></script>
+<script src="v3_epoly.js"></script>
+</head>
+<body>
+<div id="tour_show_map" style="height: 300px; width: 100%"> </div>
+
+<span id="toolbar" class="ui-widget-header ui-corner-all">
+	<button id="beginning">Reset Tour</button>
+	<button id="play">play</button>
+	<select id="change_speed" size="1" style="display:none;"><option value="1">1x</option><option value="2">2x</option><option value="4">4x</option></select>
+</span>
+
+<script type="text/javascript">
+	$(function() {
+		$('#change_speed').change(function(){
+	    		changeSpeed(this.value);
+                });
+		
+		$( "#beginning" ).button({
+			label: "Reset Tour",
+			text: false,
+			icons: {
+				primary: "ui-icon-seek-start"
+			}
+		})
+		.click(function() {
+			if ( $('#play').text() == "Pause Tour" ){
+    				$('#play').trigger('click');
+			}
+			tourRunning = false;
+    		showMapForDay([[[28.63, 77.22], [27.2227, 77.9506]], [27.2227, 77.9506], [27.1806, 78.0223], [[27.1806, 78.0223], [27.19517, 78.03134]], [27.19517, 78.03134], [27.18624, 78.04155], [[27.1985, 78.0105], [28.63, 77.22]]], 8, 'tour_show_map', ["<b>Day 1-Tomb of Akbar the Great:</b>important Mughal architectural masterpiece, built 1605-1613", "<b>Day 1-Red Fort:</b>UNESCO World Heritage site, known as sister monument of Taj Mahal", "<b>Day 1-I'timad-ud-Daulah's Tomb:</b>Often described as 'jewel box', sometimes called the 'Baby Taj', the tomb of I'timad-ud-Daulah is often regarded as a draft of the Taj Mahal.", "<b>Day 2-Taj Mahal:</b>one of the Seven Wonders of the world. It was built by Mughal emperor Shah Jahan in memory of his third wife, Mumtaz Mahal. It is widely considered as one of the most beautiful buildings in the world and stands as a symbol of eternal love."], ["Tomb of Akbar the Great", "Red Fort", "I'timad-ud-Daulah's Tomb", "Taj Mahal"]);
+		});
+		
+		$( "#play" ).button({
+			label: "Play Tour",
+			text: false,
+			icons: {
+				primary: "ui-icon-play"
+			}
+		})
+		.click(function() {
+			var options;
+			if ( $( this ).text() === "Play Tour" ) {
+				options = {
+					label: "Pause Tour",
+					icons: {
+						primary: "ui-icon-pause"
+					}
+				};
+				$('#change_speed').css('display', '');
+				animateTrip('tour_show_map', [[27.2227, 77.9506], [27.1806, 78.0223], [27.19517, 78.03134], [27.18624, 78.04155]], ["<b>Day 1-Tomb of Akbar the Great:</b>important Mughal architectural masterpiece, built 1605-1613", "<b>Day 1-Red Fort:</b>UNESCO World Heritage site, known as sister monument of Taj Mahal", "<b>Day 1-I'timad-ud-Daulah's Tomb:</b>Often described as 'jewel box', sometimes called the 'Baby Taj', the tomb of I'timad-ud-Daulah is often regarded as a draft of the Taj Mahal.", "<b>Day 2-Taj Mahal:</b>one of the Seven Wonders of the world. It was built by Mughal emperor Shah Jahan in memory of his third wife, Mumtaz Mahal. It is widely considered as one of the most beautiful buildings in the world and stands as a symbol of eternal love."], function(){$('#beginning').trigger('click');});
+			} else {
+				options = {
+					label: "Play Tour",
+					icons: {
+						primary: "ui-icon-play"
+					}
+				};
+				pauseAnimation();
+				$('#change_speed').css('display', 'none');
+			}
+			$( this ).button( "option", options );
+		});
+		
+		
+		$('#beginning').trigger('click');
+	});
+	</script>
+</body>
+</html>
